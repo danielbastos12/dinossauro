@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito Marquee com CSS</title>
+    <style>
+        .container-marquee {
+            width: 100%; /* Largura total do contêiner */
+            overflow: hidden; /* Esconde o conteúdo que transborda */
+            white-space: nowrap; /* Impede que o texto quebre linha */
+            box-sizing: border-box; /* Inclui padding e borda na largura */
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        .texto-marquee {
+            display: inline-block; /* Permite animação horizontal */
+            padding-left: 100%; /* Começa o texto fora da tela, à direita */
+            animation: marquee-animacao 15s linear infinite; /* Nome, duração, tipo, repetição */
+        }
+
+        /* Define a animação */
+        @keyframes marquee-animacao {
+            0% { transform: translateX(0%); } /* Posição inicial (texto começa à direita) */
+            100% { transform: translateX(-100%); } /* Move o texto completamente para a esquerda */
+        }
+
+        /* Para um efeito de "ida e volta" */
+        .texto-marquee.ida-e-volta {
+            animation: marquee-ida-e-volta 20s linear infinite alternate;
+        }
+
+        @keyframes marquee-ida-e-volta {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Para um efeito de pausa ao passar o mouse (melhora a acessibilidade) */
+        .container-marquee:hover .texto-marquee {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Notícias Urgentes (Rolagem contínua para a esquerda)</h2>
+    <div class="container-marquee">
+        <span class="texto-marquee">
+            Esta é uma mensagem importante que está rolando. Fique atento às últimas notícias!
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Nova tecnologia promete revolucionar o mercado. Saiba mais!
+        </span>
+    </div>
+
+    <br>
+
+    <h2>Mensagem de Boas-Vindas (Rolagem de ida e volta)</h2>
+    <div class="container-marquee">
+        <span class="texto-marquee ida-e-volta">
+            Bem-vindo ao nosso site! Explore e divirta-se com o conteúdo que preparamos para você.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Não se esqueça de se inscrever para receber nossas atualizações!
+        </span>
+    </div>
+
+</body>
+</html>

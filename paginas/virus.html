@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V!ru$</title>
+    <script>
+        let resposta = confirm('Ameaça detectada! Tem certeza que deseja continuar?')
+    </script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+
+        section {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        section > p {
+            font-size: 5vw;
+            position: absolute;
+            right: 50px;
+        }
+
+        #elementoQueMuda {
+            width: 100%;
+            height: 18vw;
+            background-color: purple; /* Cor inicial */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: sans-serif;
+            font-size: 25vw;
+            text-align: center;
+        }
+
+        img.bandeiraCaveira {
+            width: 100%;
+            height: 100%;
+        }
+
+        #bandeira {
+            position: absolute;
+            width: 150px;
+            bottom: 20px;
+            right: 150px;
+        }
+
+        #caveira {
+            /* position: absolute; */
+            margin-top: 20vh;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        .container-marquee {
+            width: 100%; /* Largura total do contêiner */
+            overflow: hidden; /* Esconde o conteúdo que transborda */
+            white-space: nowrap; /* Impede que o texto quebre linha */
+            box-sizing: border-box; /* Inclui padding e borda na largura */
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        .texto-marquee {
+            display: inline-block; /* Permite animação horizontal */
+            padding-left: 100%; /* Começa o texto fora da tela, à direita */
+            animation: marquee-animacao 15s linear infinite; /* Nome, duração, tipo, repetição */
+        }
+
+        /* Define a animação */
+        @keyframes marquee-animacao {
+            0% { transform: translateX(0%); } /* Posição inicial (texto começa à direita) */
+            100% { transform: translateX(-100%); } /* Move o texto completamente para a esquerda */
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1 id="elementoQueMuda">Malware</h1>
+        <p id="textoQueMuda">Todos os dados do usuário estão <br>
+        sendo clonados</p>
+        <div id="bandeira">
+            <img src="../imagens/bandeira-pp.png" alt="bandeira de pirata" class="bandeiraCaveira">
+        </div>
+        <div id="caveira">
+            <img src="../imagens/caveira-pp.png" alt="imagem de caveira" class="bandeiraCaveira">
+        </div>
+        <div class="container-marquee">
+        <span class="texto-marquee">
+            https://youtu.be/dQw4w9WgXcQ?si=JSmSAZy79YAZaIuP
+        </span>
+    </div>
+    </section>
+    <script>
+        const elemento = document.getElementById('elementoQueMuda');
+        const cores = ['red', 'blue', 'green', 'orange', 'purple'];
+        let indiceCorAtual = 0;
+
+        const texto = document.getElementById('textoQueMuda');
+        const coresDoTexto = ['red', 'blue', 'green', 'orange', 'purple'];
+
+        function mudarCor() {
+            elemento.style.backgroundColor = cores[indiceCorAtual];
+            indiceCorAtual = (indiceCorAtual + 1) % cores.length; // Garante que o índice volte ao início
+            texto.style.color = coresDoTexto [indiceCorAtual];
+        }
+
+        // Muda a cor a cada 1.5 segundos (1500 milissegundos)
+        setInterval(mudarCor, 150);
+    </script>
+
+    <!-- <style>
+        #elementoQueMuda {
+            width: 150px;
+            height: 150px;
+            background-color: purple; /* Cor inicial */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="elementoQueMuda">Olá! Minha cor vai mudar.</div>
+
+    <script>
+        const elemento = document.getElementById('elementoQueMuda');
+        const cores = ['red', 'blue', 'green', 'orange', 'purple'];
+        let indiceCorAtual = 0;
+
+        function mudarCor() {
+            elemento.style.backgroundColor = cores[indiceCorAtual];
+            indiceCorAtual = (indiceCorAtual + 1) % cores.length; // Garante que o índice volte ao início
+        }
+
+        // Muda a cor a cada 1.5 segundos (1500 milissegundos)
+        setInterval(mudarCor, 1500);
+    </script>
+</body>
+</html> -->
+</body>
+</html>
